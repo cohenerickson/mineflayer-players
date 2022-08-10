@@ -1,6 +1,6 @@
 import mineflayer from "mineflayer";
-import bots from "../util/bots";
-import Bot from "../types/Bot";
+import bots from "../../util/bots";
+import Bot from "../../util/Bot";
 
 export function Drop (parent: mineflayer.Bot, username: string): void {
   if (!bots.has(username) || username === parent.username) {
@@ -8,12 +8,7 @@ export function Drop (parent: mineflayer.Bot, username: string): void {
     return;
   }
 
-  const data = bots.get(username) as Bot;
-  const bot = data.bot;
+  const bot = bots.get(username) as Bot;
 
-  let item = bot.heldItem;
-  if (item) {
-    bot.toss(item.type, null, 1);
-    bot.equip(item.type, null);
-  }
+  if (bot.client.heldItem) bot.client.tossStack(bot.client.heldItem);
 }

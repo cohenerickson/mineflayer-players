@@ -12,4 +12,3 @@ export { Sprint } from "./sprint";
 export { Unsprint } from "./unsprint";
 export { Use } from "./use";
 export { Drop } from "./drop";
-export { Dropstack } from "./dropstack";

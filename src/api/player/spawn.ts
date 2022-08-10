@@ -1,8 +1,7 @@
 import mineflayer from "mineflayer";
 import { pathfinder } from "mineflayer-pathfinder";
-import * as config from "../../config.json";
-import bots from "../util/bots";
-import BotProcess from "../util/BotProcess";
+import bots from "../../util/bots";
+import Bot from "../../util/Bot";
 
 // Spawn child
 export function Spawn (parent: mineflayer.Bot, username: string): void {
@@ -12,15 +11,12 @@ export function Spawn (parent: mineflayer.Bot, username: string): void {
   };
 
   const bot: any = mineflayer.createBot({
-    host: config.host,
-    port: config.port,
+    host: process.env.MC_HOST as string,
+    port: parseInt(process.env.MC_PORT as string) as number,
     username
   });
 
   bot.loadPlugin(pathfinder);
 
-  bots.set(username, {
-    bot,
-    processes: new Map() as Map<string, BotProcess>
-  });
+  bots.set(username, new Bot(bot));
 }
