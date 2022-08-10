@@ -1,4 +1,5 @@
 import mineflayer from "mineflayer";
+import minecraftData from "minecraft-data";
 import { Client, GatewayIntentBits } from "discord.js";
 
 const client = new Client({
@@ -21,11 +22,26 @@ export default function Discord (bot: mineflayer.Bot) {
     bot.chat(`[${message.author.tag}] ${message.content}`);
   });
 
-  bot.on("chat", (username, message) => {
+  let language: any;
+  
+  bot.on("message", (jsonMsg: any, position: any): void => {
+    if (position === "chat") {
+      if (jsonMsg.with[0].text === bot.username) return;
+    }
     if (!channel) return;
-    // replace pings with invisible characters
-    channel.send(`<${username}> ${message.replace(/@everyone/, "@​everyone").replace(/@here/, "@​here")}`);
-  });
+    if (!language) language = minecraftData(bot.version).language;
+    const template = language[jsonMsg.translate];
 
+    let index = 0;
+    const message = template.replace(/%[^\s>]+/g, (match: string): string => {
+      const pram = jsonMsg.with[index];
+      index++;
+      if (pram) return pram.text;
+      else return match;
+    });
+
+    channel.send(message);
+  });
+  
   client.login(process.env.DISCORD_BOT_TOKEN);
 }

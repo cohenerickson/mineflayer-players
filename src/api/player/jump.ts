@@ -3,7 +3,10 @@ import bots from "../../util/bots";
 import Bot from "../../util/Bot";
 import BotProcess from "../../util/BotProcess";
 
-export function Jump (parent: mineflayer.Bot, username: string, mode: string, delay: string): void {
+export function Jump (parent: mineflayer.Bot, username: string, args: string[]): void {
+  const mode = args[0];
+  const delay = args[1];
+  
   if (!bots.has(username) || username === parent.username) {
     parent.chat(`Child '${username}' does not exist.`);
     return;

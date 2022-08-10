@@ -4,7 +4,7 @@ import Bot from "../../util/Bot";
 import BotProcess from "../../util/BotProcess";
 
 // Kill child
-export function Kill (parent: mineflayer.Bot, username: string): void {
+export function Kill (parent: mineflayer.Bot, username: string, args: string[]): void {
   if (!bots.has(username) || username === parent.username) {
     parent.chat(`Child '${username}' does not exist.`);
     return;

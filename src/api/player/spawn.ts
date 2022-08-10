@@ -4,7 +4,7 @@ import bots from "../../util/bots";
 import Bot from "../../util/Bot";
 
 // Spawn child
-export function Spawn (parent: mineflayer.Bot, username: string): void {
+export function Spawn (parent: mineflayer.Bot, username: string, args: string[]): void {
   if (bots.has(username) || username === parent.username) {
     parent.chat(`Child '${username}' already exists.`);
     return;

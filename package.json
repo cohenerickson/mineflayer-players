@@ -17,6 +17,7 @@
     "minecraft-data": "^3.9.1",
     "mineflayer": "github:PrismarineJS/mineflayer",
     "mineflayer-pathfinder": "^2.3.0",
+    "mineflayer-tps": "github:cohenerickson/mineflayer-tps",
     "vec3": "^0.1.7"
   },
   "devDependencies": {
