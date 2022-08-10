@@ -2,5 +2,5 @@
   "host": "localhost",
   "port": 25565,
   "prefix": ">",
-  "debug": true
+  "username": "master"
 }

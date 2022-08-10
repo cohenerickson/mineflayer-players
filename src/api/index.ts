@@ -1,1 +1,15 @@
 export { Spawn } from "./spawn";
+export { Kill } from "./kill";
+export { Move } from "./move";
+export { Sneak } from "./sneak";
+export { Unsneak } from "./unseak";
+export { Stop } from "./stop";
+export { Jump } from "./jump";
+export { Attack } from "./attack";
+export { Mount } from "./mount";
+export { Dismount } from "./dismount";
+export { Sprint } from "./sprint";
+export { Unsprint } from "./unsprint";
+export { Use } from "./use";
+export { Drop } from "./drop";
+export { Dropstack } from "./dropstack";
