@@ -5,33 +5,33 @@ export function Player (parent: mineflayer.Bot, rawArguments: string[]): void {
   const command = rawArguments[1];
   const username = rawArguments[0];
   const args = rawArguments.slice(2);
-  if (rawArguments[1] === "spawn") {
-    API.Spawn(parent, rawArguments[0], args);
-  } else if (rawArguments[1] === "kill") {
-    API.Kill(parent, rawArguments[0], args);
-  } else if (rawArguments[1] === "move") {
-    API.Move(parent, rawArguments[0], args);
-  } else if (rawArguments[1] === "sneak") {
-    API.Sneak(parent, rawArguments[0], args);
-  } else if (rawArguments[1] === "unsneak") {
-    API.Unsneak(parent, rawArguments[0], args);
-  } else if (rawArguments[1] === "stop") {
-    API.Stop(parent, rawArguments[0], args);
-  } else if (rawArguments[1] === "jump") {
-    API.Jump(parent, rawArguments[0], args);
-  } else if (rawArguments[1] === "attack") {
-    API.Attack(parent, rawArguments[0], args);
-  } else if (rawArguments[1] === "mount") {
-    API.Mount(parent, rawArguments[0], args);
-  } else if (rawArguments[1] === "dismount") {
-    API.Dismount(parent, rawArguments[0], args);
-  } else if (rawArguments[1] === "sprint") {
-    API.Sprint(parent, rawArguments[0], args);
-  } else if (rawArguments[1] === "unsprint") {
-    API.Unsprint(parent, rawArguments[0], args);
-  } else if (rawArguments[1] === "use") {
-    API.Use(parent, rawArguments[0], args);
-  } else if (rawArguments[1] === "drop") {
-    API.Drop(parent, rawArguments[0], args);
+  if (command === "spawn") {
+    API.Spawn(parent, username, args);
+  } else if (command === "kill") {
+    API.Kill(parent, username, args);
+  } else if (command === "move") {
+    API.Move(parent, username, args);
+  } else if (command === "sneak") {
+    API.Sneak(parent, username, args);
+  } else if (command === "unsneak") {
+    API.Unsneak(parent, username, args);
+  } else if (command === "stop") {
+    API.Stop(parent, username, args);
+  } else if (command === "jump") {
+    API.Jump(parent, username, args);
+  } else if (command === "attack") {
+    API.Attack(parent, username, args);
+  } else if (command === "mount") {
+    API.Mount(parent, username, args);
+  } else if (command === "dismount") {
+    API.Dismount(parent, username, args);
+  } else if (command === "sprint") {
+    API.Sprint(parent, username, args);
+  } else if (command === "unsprint") {
+    API.Unsprint(parent, username, args);
+  } else if (command === "use") {
+    API.Use(parent, username, args);
+  } else if (command === "drop") {
+    API.Drop(parent, username, args);
   }
 }

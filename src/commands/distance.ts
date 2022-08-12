@@ -1,5 +1,5 @@
 import mineflayer from "mineflayer";
-import Vector from "../util/Vector";
+import Vector from "../api/player/util/Vector";
 import { Vec3 } from "vec3";
 
 export function Distance (parent: mineflayer.Bot, rawArguments: string[]): void {

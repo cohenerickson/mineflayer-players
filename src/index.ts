@@ -1,7 +1,7 @@
 import mineflayer from "mineflayer";
 import mineflayerTps from "mineflayer-tps";
 import * as Commands from "./commands/index";
-import bots from "./util/bots";
+import bots from "./api/player/util/bots";
 import Discord from "./api/discord/index";
 import dotenv from "dotenv";
 dotenv.config();
@@ -22,7 +22,6 @@ bots.set(parent.username, parent);
 
 parent.on("chat", (username: string, message: string, translate: string | null, jsonMsg: { [key: string]: any }, matches: string[] | null): void => {
   if (username === parent.username) return;
-  console.log(message);
   if (message.startsWith(prefix)) {
     const command = message.substring(prefix.length).split(" ")[0];
     const rawArguments = message.substring(prefix.length).split(" ").slice(1);

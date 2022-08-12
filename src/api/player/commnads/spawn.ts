@@ -1,7 +1,7 @@
 import mineflayer from "mineflayer";
 import { pathfinder } from "mineflayer-pathfinder";
-import bots from "../../util/bots";
-import Bot from "../../util/Bot";
+import bots from "../util/bots";
+import Bot from "../util/Bot";
 
 // Spawn child
 export function Spawn (parent: mineflayer.Bot, username: string, args: string[]): void {
@@ -19,4 +19,12 @@ export function Spawn (parent: mineflayer.Bot, username: string, args: string[])
   bot.loadPlugin(pathfinder);
 
   bots.set(username, new Bot(bot));
+
+  bot.on("end", () => {
+    const data = bots.get(username) as Bot;
+
+    data.clearProcesses();
+    
+    bots.delete(username);
+  });
 }

@@ -1,7 +1,7 @@
 import mineflayer from "mineflayer";
-import bots from "../../util/bots";
-import Bot from "../../util/Bot";
-import BotProcess from "../../util/BotProcess";
+import bots from "../util/bots";
+import Bot from "../util/Bot";
+import BotProcess from "../util/BotProcess";
 
 export function Jump (parent: mineflayer.Bot, username: string, args: string[]): void {
   const mode = args[0];

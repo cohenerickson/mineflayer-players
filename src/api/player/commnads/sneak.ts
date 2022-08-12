@@ -1,7 +1,7 @@
 import mineflayer from "mineflayer";
-import bots from "../../util/bots";
-import Bot from "../../util/Bot";
-import BotProcess from "../../util/BotProcess";
+import bots from "../util/bots";
+import Bot from "../util/Bot";
+import BotProcess from "../util/BotProcess";
 
 export function Sneak (parent: mineflayer.Bot, username: string, args: string[]): void {
   if (!bots.has(username) || username === parent.username) {
