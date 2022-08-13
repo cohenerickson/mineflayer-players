@@ -16,12 +16,12 @@ export default function Discord (bot: mineflayer.Bot) {
     let guild = client.guilds.cache.find(g => g.id === process.env.DISCORD_GUILD_ID);
     if (guild) {
       guild.fetchWebhooks().then((webhooks: any) => {
-        if (webhooks.some((w: any) => w.name === "mineflayer-utility")) {
-          initChat(webhooks.find((w: any) => w.name === "mineflayer-utility"));
+        if (webhooks.some((w: any) => w.name === "Minecraft Without Limits")) {
+          initChat(webhooks.find((w: any) => w.name === "Minecraft Without Limits"));
         } else {
           const channel = (guild as any).channels.cache.get(process.env.DISCORD_CHANNEL_ID as string);
           channel.createWebhook({
-            name: "mineflayer-utility"
+            name: "Minecraft Without Limits"
           }).then((wh: any) => {
             initChat(wh);
           });

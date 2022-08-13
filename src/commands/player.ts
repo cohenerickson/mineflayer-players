@@ -41,5 +41,11 @@ export function Player (parent: mineflayer.Bot, rawArguments: string[]): void {
   //  API.Mine(parent, username, args);
   } else if (command === "look") {
     API.Look(parent, username, args);
+  } else if (command === "fly") {
+    API.Fly(parent, username, args);
+  } else if (command === "unfly") {
+    API.Unfly(parent, username, args);
+  } else if (command === "teleport") {
+    API.Teleport(parent, username, args);
   }
 }
