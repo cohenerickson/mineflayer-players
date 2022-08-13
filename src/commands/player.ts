@@ -33,5 +33,13 @@ export function Player (parent: mineflayer.Bot, rawArguments: string[]): void {
     API.Use(parent, username, args);
   } else if (command === "drop") {
     API.Drop(parent, username, args);
+  } else if (command === "eat") {
+    API.Eat(parent, username, args);
+  } else if (command === "say") {
+    API.Say(parent, username, args);
+  } else if (command === "mine") {
+  //  API.Mine(parent, username, args);
+  } else if (command === "look") {
+    API.Look(parent, username, args);
   }
 }

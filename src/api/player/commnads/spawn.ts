@@ -1,5 +1,6 @@
 import mineflayer from "mineflayer";
 import { pathfinder } from "mineflayer-pathfinder";
+import autoEat from "mineflayer-auto-eat";
 import bots from "../util/bots";
 import Bot from "../util/Bot";
 
@@ -17,14 +18,18 @@ export function Spawn (parent: mineflayer.Bot, username: string, args: string[])
   });
 
   bot.loadPlugin(pathfinder);
+  bot.loadPlugin(autoEat);
 
-  bots.set(username, new Bot(bot));
+  const data = new Bot(bot);
+
+  bots.set(username, data);
 
   bot.on("end", () => {
-    const data = bots.get(username) as Bot;
-
     data.clearProcesses();
-    
     bots.delete(username);
+  });
+
+  bot.on("goal_reached", () => {
+    data.removeProcess("move");
   });
 }

@@ -12,3 +12,7 @@ export { Sprint } from "./commnads/sprint";
 export { Unsprint } from "./commnads/unsprint";
 export { Use } from "./commnads/use";
 export { Drop } from "./commnads/drop";
+export { Eat } from "./commnads/eat";
+export { Say } from "./commnads/say";
+export { Mine } from "./commnads/mine";
+export { Look } from "./commnads/look";
