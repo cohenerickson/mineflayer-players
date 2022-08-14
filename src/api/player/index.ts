@@ -17,5 +17,4 @@ export { Say } from "./commands/say";
 export { Mine } from "./commands/mine";
 export { Look } from "./commands/look";
 export { Fly } from "./commands/fly";
-export { Unfly } from "./commands/unfly";
 export { Teleport } from "./commands/teleport";

@@ -35,7 +35,6 @@ export function Eat (parent: mineflayer.Bot, username: string, args: string[]): 
       }
       break;
     default:
-      console.log("eating");
       (bot.client as any).autoEat.eat();
       break;
   }

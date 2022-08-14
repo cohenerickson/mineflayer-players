@@ -11,6 +11,5 @@ export function Unsneak (parent: mineflayer.Bot, username: string, args: string[
 
   const data = bots.get(username) as Bot;
 
-  // Kill existing process
-  if (data.processes.has("sneak")) (data.processes.get("sneak") as BotProcess).kill();
+  data.removeProcess("sneak");
 }

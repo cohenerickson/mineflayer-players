@@ -11,6 +11,5 @@ export function Unsprint (parent: mineflayer.Bot, username: string, args: string
 
   const data = bots.get(username) as Bot;
 
-  // Kill existing process
-  if (data.processes.has("sprint")) (data.processes.get("sprint") as BotProcess).kill();
+  data.removeProcess("sprint");
 }

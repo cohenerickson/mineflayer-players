@@ -4,7 +4,7 @@ import Bot from "../util/Bot";
 import { Vec3 } from "vec3";
 
 export function Teleport (parent: mineflayer.Bot, username: string, args: string[]): void {
-  const method = args[0];
+  const subCommand = args[0];
   if (!bots.has(username) || username === parent.username) {
     parent.chat(`Child '${username}' does not exist.`);
     return;
@@ -13,7 +13,7 @@ export function Teleport (parent: mineflayer.Bot, username: string, args: string
   const data = bots.get(username) as Bot;
   const bot = data.client;
 
-  switch (method) {
+  switch (subCommand) {
     case "to":
       if (args.slice(1).length === 2) {
         const [x, z] = args.slice(1);
@@ -43,7 +43,7 @@ export function Teleport (parent: mineflayer.Bot, username: string, args: string
       }
       break;
     default:
-      parent.chat(`Invalid method: ${method}`);
+      parent.chat(`Invalid sub-command: ${subCommand}`);
       break;
   }
 
