@@ -1,6 +1,6 @@
 import mineflayer from "mineflayer";
 import minecraftData from "minecraft-data";
-import { Client, GatewayIntentBits, Collection } from "discord.js";
+import { Client, GatewayIntentBits } from "discord.js";
 
 export default function Discord (bot: mineflayer.Bot) {
   const client = new Client({
